@@ -19,3 +19,25 @@ n_sim = 100
 
 pnl_sim = numpy.empty((n_sim))
 
+for i_sim in range(n_sim):
+
+    ##########################################
+    #       Stock price
+    #########################################
+
+    # The Wiener process parameter.
+    sigma = 2
+    # Total time.
+    T = 1.0
+    # Number of steps.
+    N = 200 # int(T/dt)
+    # Time step size
+    dt = T/N # 0.005
+    # Create an empty array to store the realizations.
+    s = numpy.empty((N+1))
+    # Initial value of x.
+    s[0] = 100
+
+    bm.brownian(s[0], N, dt, sigma, out=s[1:])
+
+    t = numpy.linspace(0.0, N*dt, N+1)
