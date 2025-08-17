@@ -207,3 +207,10 @@ print("\nResults over: %d simulations\n"%n_sim)
 print("Average PnL: %.2f"% numpy.mean(pnl_sim))
 print("Standard deviation PnL: %.2f"% numpy.std(pnl_sim))
 
+range_min = int(min(pnl_sim) - abs(min(pnl_sim)))
+range_max = int(max(pnl_sim) + abs(min(pnl_sim)))
+
+plt.hist(pnl_sim, bins=range_max-range_min, range=(range_min, range_max))
+plt.xlabel('PnL', fontsize=16)
+plt.ylabel('Frequency', fontsize=16)
+plt.show()
