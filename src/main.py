@@ -107,3 +107,19 @@ for i_sim in range(n_sim):
             ra[n] = r[n] + r_spread/2
             rb[n] = r[n] - r_spread/2
 
+        ###############
+        # Option B: Unlimit time horizon
+        else:
+
+            # Upper bound of inventory position
+            w = 0.5 * gamma**2 * sigma**2 * (q_max+1)**2
+
+            # Optimal quotes
+            coef = gamma**2*sigma**2/(2*w-gamma**2*q[n]**2*sigma**2)
+
+            ra[n] = s[n] + math.log(1+(1-2*q[n])*coef)/gamma
+            rb[n] = s[n] + math.log(1+(-1-2*q[n])*coef)/gamma
+
+            # Reserve price
+            r[n] = (ra[n] + rb[n])/2
+
