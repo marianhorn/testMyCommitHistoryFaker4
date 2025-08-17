@@ -192,3 +192,18 @@ plt.grid(True)
 plt.legend()
 
 plt.show()
+
+print("\nParameters used in simulations:\n")
+
+print("gamma: %.3f"%gamma)
+print("k: %.3f"%k)
+print("sigma: %.3f"%sigma)
+print("T: %.2f"%T)
+print("n steps: %d"%N)
+print("Using limited horizon:", limit_horizon)
+
+print("\nResults over: %d simulations\n"%n_sim)
+
+print("Average PnL: %.2f"% numpy.mean(pnl_sim))
+print("Standard deviation PnL: %.2f"% numpy.std(pnl_sim))
+
