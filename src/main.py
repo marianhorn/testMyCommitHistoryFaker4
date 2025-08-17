@@ -149,3 +149,10 @@ for i_sim in range(n_sim):
         q[n+1] = q[n] - dNa + dNb
         x[n+1] = x[n] + ra[n]*dNa - rb[n]*dNb
         pnl[n+1] = x[n+1] + q[n+1]*s[n]
+
+        if q[n+1] > max_q_held:
+            max_q_held = q[n+1]
+        if q[n+1] < min_q_held:
+            min_q_held = q[n+1]
+
+    pnl_sim[i_sim] = pnl[-1]
