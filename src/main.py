@@ -41,3 +41,10 @@ for i_sim in range(n_sim):
     bm.brownian(s[0], N, dt, sigma, out=s[1:])
 
     t = numpy.linspace(0.0, N*dt, N+1)
+
+    # plt.plot(t, s)
+    # plt.xlabel('time', fontsize=16)
+    # plt.ylabel('price', fontsize=16)
+    # plt.grid(True)
+    # plt.show()
+
