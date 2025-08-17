@@ -156,3 +156,13 @@ for i_sim in range(n_sim):
             min_q_held = q[n+1]
 
     pnl_sim[i_sim] = pnl[-1]
+
+print("Last simulation results:\n")
+
+print("Final inventory hold: ", q[-1])
+print("Last price: ", s[-1])
+print("Cash: ", x[-1])
+print("Final wealth: ", pnl[n+1])
+print("Max q held: ", max_q_held)
+print("Min q held: ", min_q_held)
+
