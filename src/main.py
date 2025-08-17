@@ -10,3 +10,12 @@ paper url: https://www.researchgate.net/publication/24086205_High_Frequency_Trad
 Some model limitations, discussed: https://quant.stackexchange.com/questions/36400/avellaneda-stoikov-market-making-model
 Parameter fitting: https://quant.stackexchange.com/questions/36073/how-does-one-calibrate-lambda-in-a-avellaneda-stoikov-market-making-problem
 """
+
+##########################################
+#       Simulations
+#########################################
+
+n_sim = 100
+
+pnl_sim = numpy.empty((n_sim))
+
