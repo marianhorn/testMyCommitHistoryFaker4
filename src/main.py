@@ -85,3 +85,25 @@ for i_sim in range(n_sim):
     M = s[0]/200
     A = 1./dt/math.exp(k*M/2)
 
+    max_q_held = 0
+    min_q_held = 0
+
+    for n in range(N+1):
+
+        # Stock trend
+        s[n] = s[n] + 0.1 * n
+
+        # ###############
+        # # Option A: Limit time horizon
+        if limit_horizon:
+
+            # Reserve price
+            r[n] = s[n] - q[n] * gamma * sigma**2*(T-dt*n)
+
+            # Reserve spread
+            r_spread = 2 / gamma * math.log(1+gamma/k)    
+
+            # optimal quotes
+            ra[n] = r[n] + r_spread/2
+            rb[n] = r[n] - r_spread/2
+
