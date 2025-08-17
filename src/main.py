@@ -123,3 +123,11 @@ for i_sim in range(n_sim):
             # Reserve price
             r[n] = (ra[n] + rb[n])/2
 
+        # Reserve deltas
+        delta_a = ra[n] - s[n]
+        delta_b = s[n] - rb[n]
+
+        # Intensities
+        lambda_a = A * math.exp(-k*delta_a)
+        lambda_b = A * math.exp(-k*delta_b)
+
