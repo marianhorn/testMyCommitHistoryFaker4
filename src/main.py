@@ -48,3 +48,23 @@ for i_sim in range(n_sim):
     # plt.grid(True)
     # plt.show()
 
+    ##########################################
+    #       Computational loop
+    #########################################
+
+    # Limit horizon
+    limit_horizon = True
+
+    # Wealth
+    pnl = numpy.empty((N+2))
+    pnl[0] = 0
+
+    # Cash
+    x = numpy.empty((N+2))
+    x[0] = 0
+
+    # Inventory
+    q = numpy.empty((N+2))
+    q[0] = 0
+    q_max = 10
+
